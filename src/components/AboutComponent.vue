@@ -12,6 +12,7 @@
       <v-card v-for="hobby in hobbies" :key="hobby.index" class="hobby_item_container">
         <div class="hobby_item_thumbnail_container">
           <img :src="hobby.thumbnail" style="width: 100%; height: 100%">
+          <p>{{hobby.text}}</p>
         </div>
       </v-card>
     </div>
@@ -39,7 +40,6 @@
 
   .hobbies_container {
     width: 80%;
-    height: 400px;
     margin-left: 10%;
     display: flex;
     justify-content: space-evenly;
@@ -92,18 +92,18 @@
       hobbies: [
         {
           title: "Marvel/Avengers",
-          text: "lorem ipsum",
+          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sagittis tempus mauris, ut placerat nisl aliquam euismod. Nam urna ex, pharetra nec nulla vitae, elementum cursus nisl. Nam eget ipsum scelerisque, bibendum orci et, auctor nunc. Morbi at sodales dui, sed iaculis lacus. Fusce suscipit, diam ut bibendum luctus, neque sapien rutrum lectus, quis dignissim ex sapien a urna.",
           thumbnail: "/images/hobbies/marvel_avengers.jpg"
         },
         {
           title: "Gaming",
-          text: "lorem ipsum",
+          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sagittis tempus mauris, ut placerat nisl aliquam euismod. Nam urna ex, pharetra nec nulla vitae, elementum cursus nisl. Nam eget ipsum scelerisque, bibendum orci et, auctor nunc. Morbi at sodales dui, sed iaculis lacus. Fusce suscipit, diam ut bibendum luctus, neque sapien rutrum lectus, quis dignissim ex sapien a urna.",
           thumbnail: "/images/hobbies/games.jpg"
 
         },
         {
           title: "Tech",
-          text: "lorem ipsum",
+          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sagittis tempus mauris, ut placerat nisl aliquam euismod. Nam urna ex, pharetra nec nulla vitae, elementum cursus nisl. Nam eget ipsum scelerisque, bibendum orci et, auctor nunc. Morbi at sodales dui, sed iaculis lacus. Fusce suscipit, diam ut bibendum luctus, neque sapien rutrum lectus, quis dignissim ex sapien a urna.",
           thumbnail: "/images/hobbies/tech.jpg"
         }
       ]
