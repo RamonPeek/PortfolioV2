@@ -9,7 +9,7 @@ Vue.use(vueScrollto, {
   container: "#site_container",
   duration: 700,
   easing: "ease",
-  offset: 0,
+  offset: -50,
   force: true,
   cancelable: true,
   onStart: false,

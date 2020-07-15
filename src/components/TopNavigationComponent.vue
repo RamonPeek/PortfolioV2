@@ -20,6 +20,8 @@
     color: white;
     padding-left: 40px;
     text-decoration: none;
+    z-index: 9999;
+    text-shadow: 0px 0px 3px #000;
   }
 
   @media only screen and (max-width: 900px) {

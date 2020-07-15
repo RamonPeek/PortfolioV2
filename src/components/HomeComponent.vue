@@ -8,9 +8,11 @@
     <p class="function_under_title">
       Software Engineer
     </p>
-    <div class="download_resume">
-      <p class="download_resume_text">Download Resume</p>
-    </div>
+      <div class="download_resume">
+        <a href="/downloads/resume.pdf" class="download_text" download>
+          <p class="download_resume_text">Download Resume</p>
+        </a>
+      </div>
     <div class="placeholder"></div>
   </div>
 </template>
@@ -52,6 +54,7 @@
     margin-top: 30px;
     margin-left: calc(50% - 95px);
     border: 1px solid white;
+    margin-bottom: 50px;
   }
 
   .download_resume_text {
@@ -64,6 +67,11 @@
   .placeholder {
     width: 100%;
     min-height: 130px;
+  }
+
+  .download_text {
+    text-decoration: none;
+    color: white;
   }
 </style>
 

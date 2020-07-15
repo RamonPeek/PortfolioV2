@@ -36,15 +36,17 @@
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 10000;
   }
 
   .content_container {
     position: fixed;
     width: 100%;
-    height: calc(100% - 50px);
-    top: 50px;
+    height: 100%;
+    top: 0;
     left: 0;
     overflow-y: scroll;
+    z-index: 9999;
   }
 
   .about_component_container {
