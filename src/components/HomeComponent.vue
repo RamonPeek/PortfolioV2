@@ -1,8 +1,6 @@
-<template>
-  <div class="background">
-    <div class="top_navigation_container">
-      <TopNavigationComponent/>
-    </div>
+<template id="HOME">
+  <div>
+    <div class="placeholder_space"></div>
     <div class="profile_picture_container"></div>
     <p class="name_title">
       Ramon Peek
@@ -18,27 +16,20 @@
 </template>
 
 <style scoped>
-  .background {
-    background-image: url("/images/background.jpg");
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center center;
-  }
 
-  .top_navigation_container {
-    width: 100%;
-    height: 50px;
-  }
 
   .profile_picture_container {
     width: 150px;
     height: 150px;
     margin-left: calc(50% - 75px);
-    margin-top: 170px;
     background-image: url("/images/profile_picture.png");
     background-size: cover;
     border: 2px solid white;
+  }
+
+  .placeholder_space {
+    width: 100%;
+    height: 150px;
   }
 
   .name_title {
@@ -77,12 +68,10 @@
 </style>
 
 <script>
-  import TopNavigationComponent from './TopNavigationComponent.vue';
 
   export default {
     name: 'HomeComponent',
     components: {
-      TopNavigationComponent
     },
     data: () => ({
 

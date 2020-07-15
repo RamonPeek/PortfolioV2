@@ -1,9 +1,7 @@
 <template>
   <div class="top_navigation">
     <div v-for="menuItem in menuItems" :key="menuItem.index">
-      <p class="top_navigation_item">
-        {{menuItem.text}}
-      </p>
+      <a href="#" class="top_navigation_item" v-scroll-to="menuItem.componentId">{{menuItem.text}}</a>
     </div>
   </div>
 </template>
@@ -21,6 +19,7 @@
   .top_navigation_item {
     color: white;
     padding-left: 40px;
+    text-decoration: none;
   }
 
   @media only screen and (max-width: 900px) {
@@ -32,27 +31,36 @@
 </style>
 
 <script>
+
   export default {
     name: 'TopNavigationComponent',
 
     data: () => ({
       menuItems: [
         {
+          componentId: "#HOME",
           text: "Home"
         },
         {
+          componentId: "#ABOUT_ME",
           text: "About me"
         },
         {
+          componentId: "#PROJECTS",
           text: "Projects"
         },
         {
+          componentId: "#SKILLS",
           text: "Skills"
         },
         {
+          componentId: "#CONTACT",
           text: "Contact"
         }
       ]
     }),
+    methods: {
+
+    }
   }
 </script>
