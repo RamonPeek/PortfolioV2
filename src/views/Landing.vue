@@ -19,7 +19,7 @@
   .about_component_container {
     background-color: white !important;
     width: 100vw;
-    padding: 5% 20px; /* Added a percentage value for top/bottom padding to keep the wrapper inside of the parent */
+    padding-top: 45px; /* Added a percentage value for top/bottom padding to keep the wrapper inside of the parent */
     -webkit-transform: skewY(-3deg);
     -moz-transform: skewY(-3deg);
     -ms-transform: skewY(-3deg);

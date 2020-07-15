@@ -16,12 +16,18 @@
     justify-content: flex-end;
     padding-top: 15px;
     padding-right: 25px;
-
   }
 
   .top_navigation_item {
     color: white;
     padding-left: 40px;
+  }
+
+  @media only screen and (max-width: 900px) {
+    .top_navigation {
+      justify-content: space-evenly;
+      padding-top: 15px;
+    }
   }
 </style>
 

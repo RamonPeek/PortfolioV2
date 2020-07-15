@@ -22,7 +22,8 @@
     background-image: url("/images/background.jpg");
     width: 100%;
     height: 100%;
-    background-size: 100%;
+    background-size: cover;
+    background-position: center center;
   }
 
   .top_navigation_container {
