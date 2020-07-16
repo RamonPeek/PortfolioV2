@@ -18,7 +18,9 @@
       </div>
     </v-card>
     <div class="toggle_project_display_container">
-      Show all
+      <a href="#" class="show_all_text">
+        Show all
+      </a>
     </div>
   </div>
 </template>
@@ -89,13 +91,17 @@
   .toggle_project_display_container {
     width: 60%;
     margin-left: 20%;
-    margin-bottom: 50px;
+    margin-bottom: 80px;
     text-align: right;
     color: white;
     margin-top: -10px;
     padding-right: 5px;
   }
 
+  .show_all_text {
+    color: white;
+    text-decoration: none;
+  }
 
   @media only screen and (max-width: 1200px) {
     .project_content {

@@ -7,19 +7,34 @@
       <TopNavigationComponent :mobile="true"/>
     </div>
     <div id="site_container" class="content_container">
+      <!-- HOME -->
       <div class="home">
         <HomeComponent id="HOME"/>
       </div>
+      <!-- ABOUT ME -->
       <v-card class="about_component_container">
         <div class="about_component">
           <AboutComponent id="ABOUT_ME"/>
         </div>
       </v-card>
+      <!-- PROJECTS -->
       <div class="projects_component_container">
         <div class="projects_component">
           <ProjectsComponent id="PROJECTS"/>
         </div>
       </div>
+      <!-- SKILLS -->
+      <v-card class="skills_component_container">
+        <div class="skills_component">
+          <SkillsComponent id="SKILLS"/>
+        </div>
+      </v-card>
+      <!-- Contact -->
+      <v-card class="contact_component_container">
+        <div class="contact_component">
+          <ContactComponent id="CONTACT"/>
+        </div>
+      </v-card>
     </div>
   </div>
 </template>
@@ -82,9 +97,49 @@
     transform: skewY(3deg);
   }
 
-    .projects_component_container {
-      background-color: #50B3FF !important;
+  .projects_component_container {
+    background-color: #50B3FF !important;
+    width: 100vw;
+    padding-top: 45px; /* Added a percentage value for top/bottom padding to keep the wrapper inside of the parent */
+    padding-bottom: 45px;
+    -webkit-transform: skewY(-3deg);
+    -moz-transform: skewY(-3deg);
+    -ms-transform: skewY(-3deg);
+    -o-transform: skewY(-3deg);
+    transform: skewY(-3deg);
+  }
+
+  .projects_component {
+    -webkit-transform: skewY(3deg);
+    -moz-transform: skewY(3deg);
+    -ms-transform: skewY(3deg);
+    -o-transform: skewY(3deg);
+    transform: skewY(3deg);
+  }
+
+  .skills_component_container {
+    width: 100vw;
+    padding-top: 45px; /* Added a percentage value for top/bottom padding to keep the wrapper inside of the parent */
+    padding-bottom: 45px;
+    -webkit-transform: skewY(-3deg);
+    -moz-transform: skewY(-3deg);
+    -ms-transform: skewY(-3deg);
+    -o-transform: skewY(-3deg);
+    transform: skewY(-3deg);
+    margin-top: -50px;
+  }
+
+  .skills_component {
+    -webkit-transform: skewY(3deg);
+    -moz-transform: skewY(3deg);
+    -ms-transform: skewY(3deg);
+    -o-transform: skewY(3deg);
+    transform: skewY(3deg);
+  }
+
+    .contact_component_container {
       width: 100vw;
+      background-color: #FF5050 !important;
       padding-top: 45px; /* Added a percentage value for top/bottom padding to keep the wrapper inside of the parent */
       padding-bottom: 45px;
       -webkit-transform: skewY(-3deg);
@@ -92,9 +147,10 @@
       -ms-transform: skewY(-3deg);
       -o-transform: skewY(-3deg);
       transform: skewY(-3deg);
+      margin-top: -50px;
     }
 
-    .projects_component {
+    .contact_component {
       -webkit-transform: skewY(3deg);
       -moz-transform: skewY(3deg);
       -ms-transform: skewY(3deg);
@@ -102,15 +158,15 @@
       transform: skewY(3deg);
     }
 
-    @media only screen and (max-width: 900px) {
-      .top_navigation_container {
-        display: none;
-      }
-
-      .bottom_navigation_container {
-        display: block;
-      }
+  @media only screen and (max-width: 900px) {
+    .top_navigation_container {
+      display: none;
     }
+
+    .bottom_navigation_container {
+      display: block;
+    }
+  }
 </style>
 
 <script>
@@ -118,14 +174,18 @@ import HomeComponent from '@/components/HomeComponent.vue'
 import AboutComponent from '@/components/AboutComponent.vue'
 import TopNavigationComponent from "@/components/TopNavigationComponent.vue";
 import ProjectsComponent from "@/components/ProjectsComponent.vue";
+import SkillsComponent from "../components/SkillsComponent";
+import ContactComponent from "../components/ContactComponent";
 
 export default {
   name: 'Home',
   components: {
+    ContactComponent,
     TopNavigationComponent,
     HomeComponent,
     AboutComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    SkillsComponent
   },
   mounted() {
     this.$vuetify.theme.dark = false;
