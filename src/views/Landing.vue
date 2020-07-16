@@ -1,17 +1,20 @@
 <template>
   <div class="background">
     <div class="top_navigation_container">
-      <TopNavigationComponent/>
+      <TopNavigationComponent :mobile="false"/>
+    </div>
+    <div class="bottom_navigation_container">
+      <TopNavigationComponent :mobile="true"/>
     </div>
     <div id="site_container" class="content_container">
       <div class="home">
         <HomeComponent id="HOME"/>
       </div>
-      <div class="about_component_container">
+      <v-card class="about_component_container">
         <div class="about_component">
           <AboutComponent id="ABOUT_ME"/>
         </div>
-      </div>
+      </v-card>
       <div class="projects_component_container">
         <div class="projects_component">
           <ProjectsComponent id="PROJECTS"/>
@@ -39,6 +42,16 @@
     z-index: 10000;
   }
 
+  .bottom_navigation_container {
+    width: 100%;
+    height: 65px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 10000;
+    display: none;
+  }
+
   .content_container {
     position: fixed;
     width: 100%;
@@ -50,7 +63,6 @@
   }
 
   .about_component_container {
-    background-color: white !important;
     width: 100vw;
     padding-top: 45px; /* Added a percentage value for top/bottom padding to keep the wrapper inside of the parent */
     padding-bottom: 45px;
@@ -89,6 +101,16 @@
       -o-transform: skewY(3deg);
       transform: skewY(3deg);
     }
+
+    @media only screen and (max-width: 900px) {
+      .top_navigation_container {
+        display: none;
+      }
+
+      .bottom_navigation_container {
+        display: block;
+      }
+    }
 </style>
 
 <script>
@@ -104,6 +126,9 @@ export default {
     HomeComponent,
     AboutComponent,
     ProjectsComponent
+  },
+  mounted() {
+    this.$vuetify.theme.dark = false;
   }
 }
 </script>

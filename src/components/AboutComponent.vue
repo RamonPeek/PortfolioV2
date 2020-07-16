@@ -12,6 +12,7 @@
       <v-card v-for="hobby in hobbies" :key="hobby.index" class="hobby_item_container">
         <div class="hobby_item_thumbnail_container">
           <img :src="hobby.thumbnail" style="width: 100%; height: 100%">
+          <p class="hobby_item_header">{{hobby.title}}</p>
           <p>{{hobby.text}}</p>
         </div>
       </v-card>
@@ -56,6 +57,11 @@
     width:100%;
   }
 
+  .hobby_item_header {
+    font-weight: bold;
+    margin-bottom: 3px;
+  }
+
   @media only screen and (min-width: 839px) and (max-width: 1300px) {
     .about_description_container {
       width: 70%;
@@ -92,18 +98,18 @@
       hobbies: [
         {
           title: "Marvel/Avengers",
-          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sagittis tempus mauris, ut placerat nisl aliquam euismod. Nam urna ex, pharetra nec nulla vitae, elementum cursus nisl. Nam eget ipsum scelerisque, bibendum orci et, auctor nunc. Morbi at sodales dui, sed iaculis lacus. Fusce suscipit, diam ut bibendum luctus, neque sapien rutrum lectus, quis dignissim ex sapien a urna.",
+          text: "I am a huge Marvel fan (especially the MCU and the Avengers). I have watched all the movies at least a few times and I am looking forward to start digging into the comics! My favourite avenger is either Ironman or Thor.",
           thumbnail: "/images/hobbies/marvel_avengers.jpg"
         },
         {
           title: "Gaming",
-          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sagittis tempus mauris, ut placerat nisl aliquam euismod. Nam urna ex, pharetra nec nulla vitae, elementum cursus nisl. Nam eget ipsum scelerisque, bibendum orci et, auctor nunc. Morbi at sodales dui, sed iaculis lacus. Fusce suscipit, diam ut bibendum luctus, neque sapien rutrum lectus, quis dignissim ex sapien a urna.",
+          text: "I started playing videogames on the Sega Megadrive when I was just a few years old. My passion for video-games began with the Sonic-franchise, followed by Pokemon on the Nintendo and later a wide variety of games.",
           thumbnail: "/images/hobbies/games.jpg"
 
         },
         {
-          title: "Tech",
-          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sagittis tempus mauris, ut placerat nisl aliquam euismod. Nam urna ex, pharetra nec nulla vitae, elementum cursus nisl. Nam eget ipsum scelerisque, bibendum orci et, auctor nunc. Morbi at sodales dui, sed iaculis lacus. Fusce suscipit, diam ut bibendum luctus, neque sapien rutrum lectus, quis dignissim ex sapien a urna.",
+          title: "Tech & hardware",
+          text: "I love working / experimenting with hardware in pc-builds and Arduino's. I own a DIY 3D-printer with which I am able to print casings for small prototypes I want to create. I also like to stay up-to-date with the latest tech-news.",
           thumbnail: "/images/hobbies/tech.jpg"
         }
       ]

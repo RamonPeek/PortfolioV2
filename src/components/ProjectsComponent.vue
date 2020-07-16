@@ -2,7 +2,7 @@
   <div class="projects">
     <p class="component_title">Projects</p>
     <p class="component_under_title">Click on the tiles to expand</p>
-    <div v-for="project in projects" :key="project.index" class="project_container">
+    <v-card v-for="project in projects" :key="project.index" class="project_container">
       <img :src="project.thumbnail" class="project_thumbnail">
       <div class="project_content">
         <p class="project_title">{{project.title}}</p>
@@ -16,7 +16,7 @@
           <v-icon left>mdi-github</v-icon> Github
         </v-btn>
       </div>
-    </div>
+    </v-card>
     <div class="toggle_project_display_container">
       Show all
     </div>
@@ -47,7 +47,6 @@
     margin-left: 20%;
     margin-bottom: 20px;
     height: 180px;
-    background-color: white !important;
     display: flex;
     justify-content: flex-start;
     padding: 10px;
@@ -56,7 +55,6 @@
   .project_thumbnail {
     width: 160px;
     height: 160px;
-    background-color: green !important;
     margin-right: 10px;
   }
 
