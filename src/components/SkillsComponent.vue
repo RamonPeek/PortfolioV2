@@ -2,11 +2,11 @@
   <div class="skills">
     <p class="component_title">Skills</p>
     <div class="skills_container">
-      <v-card class="skill" v-for="skill in skills" :key="skill.index">
+      <div class="skill" v-for="skill in skills" :key="skill.index">
         <div class="skill_thumbnail">
           <img :src="skill.logo" class="skill_thumbnail">
         </div>
-      </v-card>
+      </div>
     </div>
   </div>
 </template>
