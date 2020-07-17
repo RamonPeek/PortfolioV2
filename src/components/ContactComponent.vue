@@ -124,6 +124,15 @@
     }
   }
 
+  @media only screen and (max-width: 500px) {
+
+    .social_media_icon {
+      margin-top: calc(1.8vw - 10px);
+      margin-right: 0px;
+      margin-left: calc(1.8vw - 10px);
+    }
+  }
+
 </style>
 
 <script>
