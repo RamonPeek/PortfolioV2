@@ -2,11 +2,14 @@
   <div class="projects">
     <p class="component_title">Projects</p>
     <p class="component_under_title">Click on the tiles to expand</p>
-    <v-card v-for="project in projects" :key="project.index" class="project_container">
+    <v-card v-for="project in projects" :key="project.index" class="project_container" v-on:click="project.expanded = !project.expanded">
       <img :src="project.thumbnail" class="project_thumbnail">
       <div class="project_content">
         <p class="project_title">{{project.title}}</p>
         <p class="project_state">{{project.state}}</p>
+        <p v-if="project.expanded" class="project_description">
+          {{project.text}}
+        </p>
       </div>
       <div class="project_links_container">
         <v-btn tile color="primary" class="project_link_button">
@@ -60,17 +63,25 @@
   }
 
   .project_content {
-    width: calc(100% - 86px);
+    width: calc(100% - 180px);
   }
 
   .project_links_container {
-    width: 150px;
+    width: 106px;
     margin-top: 10px;
   }
 
   .project_title {
     font-size: 16pt;
     font-weight: bold;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .project_description {
+    font-size: 11pt;
     text-align: left;
   }
 
@@ -109,8 +120,8 @@
       margin-left: 10%;
     }
 
-    .project_content {
-      width: calc(100% - 86px);
+    .project_title {
+      font-size: 13pt;
     }
   }
 
@@ -120,8 +131,8 @@
       margin-left: 5%;
     }
 
-    .project_content {
-      width: calc(100% - 86px);
+    .project_title {
+      font-size: 10pt;
     }
   }
 
@@ -138,22 +149,30 @@
         {
           title: "PSV Swimming Prototype",
           thumbnail: "https://i.imgur.com/lPGPlml.png",
-          state: "Finished"
+          state: "Finished",
+          text: "For the PSV Swimming app, we have worked closely with the PSV committee, swimmers of the PSV Swimming association and their coaches. It was our task to do analysis on the current app and give advise on what to do next; continue working on the app, or start from scratch for a new app. Based on the analysis we have decided to split the group in two and work on both subjects. I have documented the old structure and code of the app, and I have joined the group who will be working on the new app. We will create an app in which swimmers will be able to register for competitions, coaches can confirm these registrations, and the administration will be able to automatically import the registrations into their system and the official European Swimming Federation Database.",
+          expanded: false
+        },
+        {
+          title: "Digital Excellence",
+          thumbnail: "https://i.imgur.com/Z9FoPCK.png",
+          state: "Released beta",
+          text: "DeX (Digital Excellence) is an initiative from Fontys which focuses on making projects students are working on public. This way students can interact with other people's projects and collaborate. It also keeps the projects alive after a student has graduated. DeX will make use of external sources, for example: GitLab, GitHub and HBO Kennisbank. Students will also be able to manually add projects to the platform. For now our focus lays within Fontys, but if it succeeds it could form a solution for a lot of universities.",
+          expanded: false
         },
         {
           title: "Smart Light (Strijp S)",
           thumbnail: "https://i.imgur.com/BD3uZyO.png",
-          state: "Implemented in OpenSource"
-        },
-        {
-          title: "Digital Excellence",
-          thumbnail: "https://i.imgur.com/JNcBOQY.png",
-          state: "Released beta"
+          state: "Implemented in OpenSource",
+          text: "Smart Light is a challenge project devised by OpenRemote. Within this challenge it is our task to create a sustainable and reliable way of communicating with streetlights in the Strijp S district. This projects acts as a proof of concept for Strijp S (and other cities worldwide) that IoT should be the next step. For the OpenRemote Manager (their IoT context broker), we have implemented a protocol which allows DMX lights to be controlled over udp. The streetlights in the Strijp S district are not controlled over Artnet however, so a future group will have to dig into this problem. Due to the corona-virus we were not able to do enough research on the physical lights themselves at Strijp, so we decided to implement and run our protocol in a DMX-specialist's office in the UK.",
+          expanded: false
         },
         {
           title: "TamaCoachee",
           thumbnail: "https://i.imgur.com/44GTOeD.png",
-          state: "Finished"
+          state: "Finished",
+          text: "Fontys' psychology department is looking for a way of training coaches with a chatbot. For this to actually be useful, we have to create a really smart (human-like) chatbot. It will need to have knowledge of context (as far as possible), it needs to be able to detect emotions, and it will have to hold a conversation as if you were talking to a real person. We will be using PyTorch for settings up our neuralnetwork, and use pre-defined models where possible. Because the chatbot needs to be dutch, we only have a limited data set, and thus have to gather own training data to extend the learning process on the model.",
+          expanded: false
         }
       ]
     }),
