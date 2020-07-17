@@ -18,7 +18,7 @@
         <v-card class="mailto_message_container">
           <v-textarea v-model="emailMessage" label="Message" :rules="messageRules" auto-grow clearable no-resize maxlength="2000" counter="2000"></v-textarea>
         </v-card>
-        <v-btn large v-on:click="sendEmail" class="mailto_send_button">Send</v-btn>
+        <v-btn large v-on:click="sendEmail" class="mailto_send_button">Send e-mail</v-btn>
       </v-form>
     </div>
   </div>
@@ -158,6 +158,10 @@
         {
           icon: "mdi-instagram",
           link: "https://www.instagram.com/ramonpeek/"
+        },
+        {
+          icon: "mdi-twitter",
+          link: "https://twitter.com/RamonPeek99"
         },
         {
           icon: "mdi-twitch",
