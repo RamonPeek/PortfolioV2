@@ -116,6 +116,14 @@
     width: 250px;
   }
 
+  @media only screen and (max-width: 700px) {
+
+    .mailto_container {
+      width: 90%;
+      margin-left: 5%;
+    }
+  }
+
 </style>
 
 <script>
