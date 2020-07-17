@@ -10,6 +10,17 @@
         </div>
       </div>
     </div>
+    <div class="mailto_container">
+      <v-form ref="emailForm" v-model="validEmailForm">
+        <v-card class="mailto_topic_container">
+          <v-text-field v-model="emailTopic" label="Topic" :rules="topicRules" clearable></v-text-field>
+        </v-card>
+        <v-card class="mailto_message_container">
+          <v-textarea v-model="emailMessage" label="Message" :rules="messageRules" auto-grow clearable no-resize maxlength="2000" counter="2000"></v-textarea>
+        </v-card>
+        <v-btn large v-on:click="sendEmail" class="mailto_send_button">Send</v-btn>
+      </v-form>
+    </div>
   </div>
 </template>
 
@@ -26,7 +37,7 @@
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    margin-bottom: 25px;
+    margin-bottom: 100px;
 
   }
 
@@ -78,6 +89,33 @@
     }
   }
 
+  .mailto_container {
+    width: 50%;
+    margin-left: 25%;
+    margin-bottom: 110px;
+  }
+
+  .mailto_topic_container {
+    width: 100%;
+    height: 80px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 7px;
+    margin-bottom: 20px;
+  }
+
+  .mailto_message_container {
+    width: 100%;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 7px;
+    margin-bottom: 20px;
+  }
+
+  .mailto_send_button {
+    width: 250px;
+  }
+
 </style>
 
 <script>
@@ -108,12 +146,28 @@
           icon: "mdi-twitch",
           link: "https://www.twitch.tv/ramonpeekfifa"
         },
-      ]
+      ],
+      validEmailForm: false,
+      emailTopic: null,
+      topicRules: [
+        v => !!v || 'Topic is required',
+        v => (v && v.length >= 10 && v.length <= 50) || 'Topic must be between than 10 and 50 characters',
+      ],
+      emailMessage: null,
+      messageRules: [
+        v => !!v || 'Message is required',
+        v => (v && v.length <= 2000) || 'The message may contain a maximum of 2000 characters.',
+      ],
     }),
     methods: {
       redirectToLink(link) {
         window.location = link;
-      }
+      },
+      sendEmail() {
+        if(this.$refs.emailForm.validate()) {
+          window.open('mailto:ramonpeek@hotmail.com?subject=' + this.emailTopic + '&body=' + this.emailMessage);
+        }
+      },
     }
   }
 </script>
