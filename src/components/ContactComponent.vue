@@ -26,6 +26,8 @@
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    margin-bottom: 25px;
+
   }
 
   .social_media_item {
@@ -64,6 +66,16 @@
     margin-top: calc(calc(calc(100% - 7vw) / 2) - 2px);
     color: #FF5050 !important;
     padding: 10px;
+  }
+
+  @media only screen and (min-width: 1450px) {
+
+    .social_media_icon {
+      font-size: 80pt;
+      margin-top: 7px;
+      margin-right: 0px;
+      margin-left: -2px;
+    }
   }
 
 </style>
