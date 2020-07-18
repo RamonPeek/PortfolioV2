@@ -290,6 +290,16 @@
           expanded: false
         },
         {
+          title: "OpenUITwitchBot",
+          thumbnail: "https://i.imgur.com/rjlEmbO.png",
+          state: "Work in progress",
+          text: "OpenUITwitchBot is an online platform meant for beginning streamers. It is a PWA (progressive web-app) which means that it is both online accessible, and downloadable to your device. The only thing streamers have to do to get started is create an account and authorize their Twitch.tv account. After this all the data will be gathered automatically via the TwitchAPI and provided webhooks. A combination of webhooks and SignalR hubs provide 'near' realtime updates when for example a new follower or bits-donation is detected. The streamer will be able to configure actions based on these triggers (such as playing a video/gif in the overlay or playing a sound). The app also provides a way to create commands which can be used in realtime. As soon as the command is created it will be usable by the chat. Commands will be triggered as soon as someone in the chat types the command, and a command can have several actions such as: play a sound, play a gif and respond in chat. All this data gathering is presented to the user in the form of a stream-overlay which updates in realtime, without the need of configuration. Customizability is possible in the way of moving certain items in the overlay. In the future this will also include the styling of the overlay.",
+          mediaItems: [],
+          repository: "https://github.com/RamonPeek/OpenUITwitchBot_Frontend",
+          website: null,
+          expanded: false
+        },
+        {
           title: "TamaCoachee",
           thumbnail: "https://i.imgur.com/44GTOeD.png",
           state: "Finished",
