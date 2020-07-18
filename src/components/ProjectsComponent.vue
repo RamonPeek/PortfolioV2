@@ -10,6 +10,13 @@
         <p v-if="project.expanded" class="project_description">
           {{project.text}}
         </p>
+        <div v-if="project.expanded" class="project_media_items_container">
+          <div class="project_media_item" v-for="mediaItem in project.mediaItems" :key="mediaItem.index">
+            <div class="project_media_item_content">
+              test
+            </div>
+          </div>
+        </div>
       </div>
       <div class="project_links_container">
         <v-btn tile color="primary" class="project_link_button">
@@ -114,6 +121,35 @@
     text-decoration: none;
   }
 
+  .project_media_items_container {
+    width: 100%;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .project_media_item {
+    width: 100%;
+    background-color: green !important;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    position:relative;
+  }
+
+  .project_media_item_content {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .project_media_item_image_container {
+    width: 100%;
+    height: 100%;
+  }
+
   @media only screen and (min-width: 601px) and (max-width: 1200px) {
     .project_container {
       width: 80%;
@@ -151,6 +187,24 @@
           thumbnail: "https://i.imgur.com/lPGPlml.png",
           state: "Finished",
           text: "For the PSV Swimming app, we have worked closely with the PSV committee, swimmers of the PSV Swimming association and their coaches. It was our task to do analysis on the current app and give advise on what to do next; continue working on the app, or start from scratch for a new app. Based on the analysis we have decided to split the group in two and work on both subjects. I have documented the old structure and code of the app, and I have joined the group who will be working on the new app. We will create an app in which swimmers will be able to register for competitions, coaches can confirm these registrations, and the administration will be able to automatically import the registrations into their system and the official European Swimming Federation Database.",
+          mediaItems: [
+            {
+              type: 0, //IMAGE
+              content: ""
+            },
+            {
+              type: 1, //VIDEO
+              content: ""
+            },
+            {
+              type: 0, //IMAGE
+              content: ""
+            },
+            {
+              type: 1, //VIDEO
+              content: ""
+            }
+          ],
           expanded: false
         },
         {

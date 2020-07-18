@@ -10,6 +10,7 @@
         </div>
       </div>
     </div>
+    <p class="component_contact_title">E-mail me</p>
     <div class="mailto_container">
       <v-form ref="emailForm" v-model="validEmailForm">
         <v-card class="mailto_topic_container">
@@ -29,6 +30,11 @@
   .component_title {
     font-size: 25pt;
     font-weight: bold;
+    color: white;
+  }
+
+  .component_contact_title {
+    font-size: 18pt;
     color: white;
   }
 
