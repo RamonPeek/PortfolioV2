@@ -2,15 +2,15 @@
   <div class="projects">
     <p class="component_title">Projects</p>
     <p class="component_under_title">Click on the tiles to expand</p>
-    <v-card v-for="project in projects" :key="project.index" class="project_container" v-on:click="project.expanded = !project.expanded">
-      <img :src="project.thumbnail" class="project_thumbnail">
+    <v-card v-for="project in projects" :key="project.index" class="project_container">
+      <img :src="project.thumbnail" class="project_thumbnail" v-on:click="project.expanded = !project.expanded">
       <div class="project_content">
-        <p class="project_title">{{project.title}}</p>
-        <p class="project_state">{{project.state}}</p>
-        <p v-if="project.expanded" class="project_description">
+        <p class="project_title" v-on:click="project.expanded = !project.expanded">{{project.title}}</p>
+        <p class="project_state" v-on:click="project.expanded = !project.expanded">{{project.state}}</p>
+        <p v-if="project.expanded" class="project_description" v-on:click="project.expanded = !project.expanded">
           {{project.text}}
         </p>
-        <div v-if="project.expanded" class="project_media_items_container">
+        <div v-if="project.expanded" class="project_media_items_container" v-on:click="project.expanded = !project.expanded">
           <div class="project_media_item" v-for="mediaItem in project.mediaItems" :key="mediaItem.index">
             <div class="project_media_item_content">
               <!-- IMAGE -->
@@ -22,10 +22,10 @@
         </div>
       </div>
       <div class="project_links_container">
-        <v-btn tile color="primary" class="project_link_button">
+        <v-btn tile color="primary" class="project_link_button" v-if="project.website" v-on:click="redirectToURL(project.website)">
           <v-icon left>mdi-earth</v-icon>
         </v-btn>
-        <v-btn tile color="secondary" class="project_link_button">
+        <v-btn tile color="secondary" class="project_link_button" v-if="project.repository" v-on:click="redirectToURL(project.repository)">
           <v-icon left>mdi-github</v-icon>
         </v-btn>
       </div>
@@ -64,6 +64,7 @@
     display: flex;
     justify-content: flex-start;
     padding: 10px;
+    cursor: pointer;
   }
 
   .project_thumbnail {
@@ -79,6 +80,8 @@
   .project_links_container {
     width: 106px;
     margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
   }
 
   .project_title {
@@ -224,6 +227,8 @@
               content: "https://i.imgur.com/s3pJJx4.png"
             }
           ],
+          repository: null,
+          website: null,
           expanded: false
         },
         {
@@ -249,6 +254,8 @@
               content: "https://i.imgur.com/9czPk6b.png"
             }
           ],
+          repository: "https://github.com/orgs/DigitalExcellence/",
+          website: "https://dex.software/",
           expanded: false
         },
         {
@@ -278,6 +285,8 @@
               content: "https://firebasestorage.googleapis.com/v0/b/personalportfolio-2adb0.appspot.com/o/images%2Fprojects%2FzVmfkH92zGnrtq7BSeU9%2FmediaItems%2FmBqSpowRM0AJyZE8fzWe?alt=media&token=9450f023-a399-49a1-8c1d-830b8db5eb8a"
             }
           ],
+          repository: "https://github.com/openremote/openremote",
+          website: null,
           expanded: false
         },
         {
@@ -285,9 +294,17 @@
           thumbnail: "https://i.imgur.com/44GTOeD.png",
           state: "Finished",
           text: "Fontys' psychology department is looking for a way of training coaches with a chatbot. For this to actually be useful, we have to create a really smart (human-like) chatbot. It will need to have knowledge of context (as far as possible), it needs to be able to detect emotions, and it will have to hold a conversation as if you were talking to a real person. We will be using PyTorch for settings up our neuralnetwork, and use pre-defined models where possible. Because the chatbot needs to be dutch, we only have a limited data set, and thus have to gather own training data to extend the learning process on the model.",
+          mediaItems: [],
+          repository: null,
+          website: null,
           expanded: false
         }
       ]
     }),
+    methods: {
+      redirectToURL(url) {
+        window.location = url;
+      }
+    }
   }
 </script>
