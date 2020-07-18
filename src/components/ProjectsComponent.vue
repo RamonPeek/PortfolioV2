@@ -13,7 +13,10 @@
         <div v-if="project.expanded" class="project_media_items_container">
           <div class="project_media_item" v-for="mediaItem in project.mediaItems" :key="mediaItem.index">
             <div class="project_media_item_content">
-              test
+              <!-- IMAGE -->
+              <img v-if="mediaItem.type === 0" :src="mediaItem.content" class="project_media_item_image_container">
+              <!-- VIDEO -->
+              <video v-if="mediaItem.type === 1" width="100%" height="100%" controls :src="mediaItem.content"></video>
             </div>
           </div>
         </div>
@@ -125,7 +128,7 @@
     width: 100%;
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 
   .project_media_item {
@@ -190,19 +193,35 @@
           mediaItems: [
             {
               type: 0, //IMAGE
-              content: ""
-            },
-            {
-              type: 1, //VIDEO
-              content: ""
+              content: "https://i.imgur.com/u7m7Oxh.png"
             },
             {
               type: 0, //IMAGE
-              content: ""
+              content: "https://i.imgur.com/H4vb9IJ.png"
             },
             {
-              type: 1, //VIDEO
-              content: ""
+              type: 0, //IMAGE
+              content: "https://i.imgur.com/tHhSDLY.png"
+            },
+            {
+              type: 0, //IMAGE
+              content: "https://i.imgur.com/Ab99fDX.png"
+            },
+            {
+              type: 0, //IMAGE
+              content: "https://i.imgur.com/TNMSUhs.png"
+            },
+            {
+              type: 0, //IMAGE
+              content: "https://i.imgur.com/EIRp2pH.png"
+            },
+            {
+              type: 0, //IMAGE
+              content: "https://i.imgur.com/dTMi9vI.png"
+            },
+            {
+              type: 0, //IMAGE
+              content: "https://i.imgur.com/s3pJJx4.png"
             }
           ],
           expanded: false
@@ -212,6 +231,24 @@
           thumbnail: "https://i.imgur.com/Z9FoPCK.png",
           state: "Released beta",
           text: "DeX (Digital Excellence) is an initiative from Fontys which focuses on making projects students are working on public. This way students can interact with other people's projects and collaborate. It also keeps the projects alive after a student has graduated. DeX will make use of external sources, for example: GitLab, GitHub and HBO Kennisbank. Students will also be able to manually add projects to the platform. For now our focus lays within Fontys, but if it succeeds it could form a solution for a lot of universities.",
+          mediaItems: [
+            {
+              type: 0, //IMAGE
+              content: "https://i.imgur.com/Ermu3y6.png"
+            },
+            {
+              type: 0, //IMAGE
+              content: "https://i.imgur.com/R95xghC.png"
+            },
+            {
+              type: 0, //IMAGE
+              content: "https://i.imgur.com/IvbT8E6.png"
+            },
+            {
+              type: 0, //IMAGE
+              content: "https://i.imgur.com/9czPk6b.png"
+            }
+          ],
           expanded: false
         },
         {
@@ -219,6 +256,28 @@
           thumbnail: "https://i.imgur.com/BD3uZyO.png",
           state: "Implemented in OpenSource",
           text: "Smart Light is a challenge project devised by OpenRemote. Within this challenge it is our task to create a sustainable and reliable way of communicating with streetlights in the Strijp S district. This projects acts as a proof of concept for Strijp S (and other cities worldwide) that IoT should be the next step. For the OpenRemote Manager (their IoT context broker), we have implemented a protocol which allows DMX lights to be controlled over udp. The streetlights in the Strijp S district are not controlled over Artnet however, so a future group will have to dig into this problem. Due to the corona-virus we were not able to do enough research on the physical lights themselves at Strijp, so we decided to implement and run our protocol in a DMX-specialist's office in the UK.",
+          mediaItems: [
+            {
+              type: 0, //IMAGE
+              content: "https://i.imgur.com/euTxBO3.png"
+            },
+            {
+              type: 1, //VIDEO
+              content: "https://firebasestorage.googleapis.com/v0/b/personalportfolio-2adb0.appspot.com/o/images%2Fprojects%2FzVmfkH92zGnrtq7BSeU9%2FmediaItems%2FFQQLd1tEnVai6osG15QW?alt=media&token=dc3d5d6a-9505-440e-bd7c-9fb2b3edd1b6"
+            },
+            {
+              type: 1, //VIDEO
+              content: "https://firebasestorage.googleapis.com/v0/b/personalportfolio-2adb0.appspot.com/o/images%2Fprojects%2FzVmfkH92zGnrtq7BSeU9%2FmediaItems%2Fs8T1JQUBK6QT8qNDEsb6?alt=media&token=504040eb-0146-46ea-af00-1fbaf6864091"
+            },
+            {
+              type: 1, //VIDEO
+              content: "https://firebasestorage.googleapis.com/v0/b/personalportfolio-2adb0.appspot.com/o/images%2Fprojects%2FzVmfkH92zGnrtq7BSeU9%2FmediaItems%2FBIMWXPla0pBYmpoBXY0B?alt=media&token=8cdb2282-d57d-40a3-993e-93f215bda0a4"
+            },
+            {
+              type: 1, //VIDEO
+              content: "https://firebasestorage.googleapis.com/v0/b/personalportfolio-2adb0.appspot.com/o/images%2Fprojects%2FzVmfkH92zGnrtq7BSeU9%2FmediaItems%2FmBqSpowRM0AJyZE8fzWe?alt=media&token=9450f023-a399-49a1-8c1d-830b8db5eb8a"
+            }
+          ],
           expanded: false
         },
         {
