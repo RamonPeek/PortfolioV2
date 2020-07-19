@@ -166,6 +166,11 @@
     .project_title {
       font-size: 13pt;
     }
+
+    .project_media_items_container {
+      width: calc(100% + 163px);
+      margin-left: -60px;
+    }
   }
 
   @media only screen and (max-width: 600px) {
@@ -177,6 +182,16 @@
     .project_title {
       font-size: 10pt;
     }
+
+    .project_media_items_container {
+      width: calc(100% + 163px);
+      margin-left: -60px;
+
+      display: grid;
+      grid-gap: 10px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
   }
 
 </style>
