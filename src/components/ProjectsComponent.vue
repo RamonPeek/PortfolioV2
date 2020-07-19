@@ -31,9 +31,11 @@
       </div>
     </v-card>
     <div class="toggle_project_display_container">
+      <!--
       <a href="#" class="show_all_text">
         Show all
       </a>
+      -->
     </div>
   </div>
 </template>
@@ -136,7 +138,6 @@
 
   .project_media_item {
     width: 100%;
-    background-color: green !important;
     padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
