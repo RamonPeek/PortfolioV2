@@ -16,6 +16,12 @@
           <p>{{hobby.text}}</p>
         </div>
       </v-card>
+      <v-card v-for="album in albums" :key="album.index" class="music_item_container">
+        <div class="music_item_thumbnail_container">
+          <img :src="album.thumbnail" style="width: 100%; height: 100%">
+          <p class="music_item_header">{{album.title}}</p>
+        </div>
+      </v-card>
     </div>
   </div>
 </template>
@@ -58,6 +64,20 @@
   }
 
   .hobby_item_header {
+    font-weight: bold;
+    margin-bottom: 3px;
+  }
+
+  .music_item_container {
+    width: 60%;
+    margin-bottom: 30px;
+  }
+
+  .music_item_thumbnail_container {
+    width:100%;
+  }
+
+  .music_item_header {
     font-weight: bold;
     margin-bottom: 3px;
   }
@@ -111,6 +131,11 @@
           title: "Tech & hardware",
           text: "I love working / experimenting with hardware in pc-builds and Arduino's. I own a DIY 3D-printer with which I am able to print casings for small prototypes I want to create. I also like to stay up-to-date with the latest tech-news.",
           thumbnail: "/images/hobbies/tech.jpg"
+        }
+      ],
+      albums: [
+        {
+          title: "test"
         }
       ]
     }),
