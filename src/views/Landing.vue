@@ -1,5 +1,5 @@
 <template>
-  <div class="background">
+  <div class="background" style="background-image: url('<%= BASE_URL %>images/background.jpg')">
     <div class="top_navigation_container">
       <TopNavigationComponent :mobile="false"/>
     </div>
@@ -41,7 +41,6 @@
 
 <style scoped>
     .background {
-      background-image: url("/public/images/background.jpg");
       width: 100%;
       height: 100%;
       background-size: cover;
