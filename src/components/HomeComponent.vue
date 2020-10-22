@@ -1,7 +1,7 @@
 <template id="HOME">
   <div>
     <div class="placeholder_space"></div>
-    <div class="profile_picture_container" style="background-image: url('<%= BASE_URL %>images/profile_picture.png');"></div>
+    <div class="profile_picture_container" :style="profilePictureStyle"></div>
     <p class="name_title">
       Ramon Peek
     </p>
@@ -9,7 +9,7 @@
       Software Engineer
     </p>
       <div class="download_resume">
-        <a href="<%= BASE_URL %>downloads/resume.pdf" class="download_text" download>
+        <a :href="resumeDownloadUrl" class="download_text" v-on:click="test" download>
           <p class="download_resume_text">Download Resume</p>
         </a>
       </div>
@@ -76,12 +76,28 @@
 
 <script>
 
+  let baseUrl = process.env.BASE_URL;
+
   export default {
     name: 'HomeComponent',
     components: {
     },
-    data: () => ({
-
-    }),
+    data() {
+      return {
+        resumeDownloadUrl: baseUrl + "downloads/resume.pdf"
+      }
+    },
+    methods: {
+      test() {
+        console.log(this.resumeDownloadUrl);
+      }
+    },
+    computed: {
+      profilePictureStyle() {
+        return {
+          "background-image": "url('" + baseUrl + "images/profile_picture.png')",
+        }
+      }
+    }
   }
 </script>

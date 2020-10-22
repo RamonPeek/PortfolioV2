@@ -1,5 +1,5 @@
 <template>
-  <div class="background" style="background-image: url('<%= BASE_URL %>images/background.jpg')">
+  <div class="background" :style="backgroundStyle">
     <div class="top_navigation_container">
       <TopNavigationComponent :mobile="false"/>
     </div>
@@ -176,6 +176,8 @@ import ProjectsComponent from "@/components/ProjectsComponent.vue";
 import SkillsComponent from "../components/SkillsComponent";
 import ContactComponent from "../components/ContactComponent";
 
+let baseUrl = process.env.BASE_URL;
+
 export default {
   name: 'Home',
   components: {
@@ -188,6 +190,13 @@ export default {
   },
   mounted() {
     this.$vuetify.theme.dark = false;
+  },
+  computed: {
+    backgroundStyle() {
+      return {
+        "background-image": "url('" + baseUrl + "images/background.jpg')"
+      }
+    }
   }
 }
 </script>
