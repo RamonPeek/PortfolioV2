@@ -9,7 +9,7 @@
       Software Engineer
     </p>
       <div class="download_resume">
-        <a href="/downloads/resume.pdf" class="download_text" download>
+        <a href="<%= BASE_URL %>/downloads/resume.pdf" class="download_text" download>
           <p class="download_resume_text">Download Resume</p>
         </a>
       </div>
@@ -24,7 +24,7 @@
     width: 150px;
     height: 150px;
     margin-left: calc(50% - 75px);
-    background-image: url("/images/profile_picture.png");
+    background-image: url("public/images/profile_picture.png");
     background-size: cover;
     border: 2px solid white;
   }

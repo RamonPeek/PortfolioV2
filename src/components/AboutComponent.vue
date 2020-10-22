@@ -104,6 +104,8 @@
 
 <script>
 
+  let baseUrl = process.env.BASE_URL;
+
   export default {
     name: 'AboutComponent',
     components: {
@@ -113,18 +115,18 @@
         {
           title: "Marvel/Avengers",
           text: "I am a huge Marvel fan (especially the MCU and the Avengers). I have watched all the movies at least a few times and I am looking forward to start digging into the comics! My favourite avenger is either Ironman or Thor.",
-          thumbnail: "/images/hobbies/marvel_avengers.jpg"
+          thumbnail: baseUrl + "/images/hobbies/marvel_avengers.jpg"
         },
         {
           title: "Gaming",
           text: "I started playing videogames on the Sega Megadrive when I was just a few years old. My passion for video-games began with the Sonic-franchise, followed by Pokemon on the Nintendo and later a wide variety of games.",
-          thumbnail: "/images/hobbies/games.jpg"
+          thumbnail: baseUrl + "/images/hobbies/games.jpg"
 
         },
         {
           title: "Tech & hardware",
           text: "I love working / experimenting with hardware in pc-builds and Arduino's. I own a DIY 3D-printer with which I am able to print casings for small prototypes I want to create. I also like to stay up-to-date with the latest tech-news.",
-          thumbnail: "/images/hobbies/tech.jpg"
+          thumbnail: baseUrl + "/images/hobbies/tech.jpg"
         }
       ]
     }),

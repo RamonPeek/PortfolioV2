@@ -41,7 +41,7 @@
 
 <style scoped>
     .background {
-      background-image: url("/images/background.jpg");
+      background-image: url("/public/images/background.jpg");
       width: 100%;
       height: 100%;
       background-size: cover;
